@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>All Task</title>
-    <link rel="stylesheet" href="/home.css">
-   
-</head>
+    <link rel="stylesheet" href="/home.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1 class="heading">ALL TASKS</h1>
-        <a href="http://localhost:4000/posts/new" class="create-post-link">Create a Post</a>
-        <% for(let post of list) { %>
-            <div class="post">
-                <div>
-                    <img width="100px" height="50px" src=<%=post.data.downloadURL %> alt="image">
+      <h1 class="heading">ALL TASKS</h1>
+      <a href="/posts/new" class="create-post-link">Create a Post</a>
+      <% for(let post of list) { %>
+      <div class="post">
+        <div>
+          <img
+            width="100px"
+            height="50px"
+            src="<%= post.data.downloadURL %>"
+            alt="image"
+          />
 
-<h2 class="username">@<%= post.data.username %>
-</h2><p class="content">
-    <%= post.data.content %>
-</p>
+          <h2 class="username">@<%= post.data.username %></h2>
+          <p class="content"><%= post.data.content %></p>
+        </div>
 
-                </div>
-                
-               
-                <div class="actions">
-                    <a class="edit" href="http://localhost:4000/posts/<%= post.id %>/edit">Edit</a>
-                    <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
-                        <button type="submit">Delete</button>
-                    </form>
-                </div>
-            </div>
-            <% } %>
+        <div class="actions">
+          <a class="edit" href="/posts/<%= post.id %>/edit">Edit</a>
+          <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+      <% } %>
     </div>
-</body>
-
+  </body>
 </html>

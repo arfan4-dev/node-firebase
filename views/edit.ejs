@@ -12,10 +12,12 @@
         <p class="post-info">Post ID: <%= id %></p>
         <p class="post-info">Username: <%= post.data.username %></p>
        
-        <form method="post" action="/posts/<%=id%>?_method=PATCH" class="content-area">
-            <textarea class="post-content" name="content" id="content" cols="30" rows="10"><%=  post.data.content %></textarea>
-            <button class="submit-btn" type="submit">Submit Edit</button>
-        </form>
+    <form method="post" action="/posts/<%=id%>?_method=PATCH" class="content-area" enctype="multipart/form-data">
+        <textarea class="post-content" name="content" id="content" cols="30" rows="10"><%=  post.data.content %></textarea>
+        <input type="file" name="avatar">
+        <button class="submit-btn" type="submit">Submit Edit</button>
+    </form>
+
         </div>
 </body>
 </html>

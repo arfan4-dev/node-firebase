@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Single Post</title>
-    <link rel="stylesheet" href="/post.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/post.css" />
+  </head>
+  <body>
     <div class="post-container">
-        <h1 class="heading">Single Post</h1>
-        <div class="post">
-            <h2 class="username">@<%= post.username %></h2>
-            <p class="content"><%= post.content %></p>
-        </div>
-        <a href="http://localhost:4000/posts" class="back-link">Back to All Posts</a>
+      <h1 class="heading">Single Post</h1>
+      <div class="post">
+        <h2 class="username">@<%= post.username %></h2>
+        <p class="content"><%= post.content %></p>
+      </div>
+      <a href="/posts" class="back-link">Back to All Posts</a>
     </div>
-</body>
+  </body>
 </html>
